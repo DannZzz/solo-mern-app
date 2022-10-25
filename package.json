@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "deps:install": "npm install && npm install --prefix src/client",
     "start": "ts-node src/index.ts",
     "server": "cross-env NODE_ENV=develop nodemon --ignore src/client/ src/index.ts",
     "client": "npm run start --prefix src/client",
