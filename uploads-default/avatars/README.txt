@@ -1,0 +1,1 @@
+Dont delete image "default-avatar.jpg"
