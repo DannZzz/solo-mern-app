@@ -1,1 +1,0 @@
-export type AnyArray<T> = Array<T> | ReadonlyArray<T>;
