@@ -3,23 +3,22 @@ upload
 src/tokens.json
 
 # dependencies
-src/client/node_modules
-src/client/.pnp
-src/client.pnp.js
+/.pnp
+.pnp.js
 
 # testing
-src/client/coverage
+/coverage
 
 # production
-src/client/build
+build
 
 # misc
-src/client.DS_Store
-src/client.env.local
-src/client.env.development.local
-src/client.env.test.local
-src/client.env.production.local
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-src/clientnpm-debug.log*
-src/clientyarn-debug.log*
-src/clientyarn-error.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
