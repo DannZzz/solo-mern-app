@@ -1,0 +1,53 @@
+@import "../vars.scss";
+
+.Home {
+    height: 100%;
+    position: relative;
+    width: $home-width;
+    margin: 0 auto;
+    padding: 40px;
+
+    .home-footer-bar {
+        height: $top-footer-bar-height;
+        bottom: 0;
+        background-color: $top-footer-bar-background-color;
+    }
+
+    .home-main {
+        height: calc(100% - (2 * $top-footer-bar-height) - 2px);
+
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+
+        @include on-mobile {
+            flex-direction: column;
+        }
+
+        @include on-tablet {
+            flex-direction: column;
+        }
+
+        .home-main-child {
+            border-radius: 7px;
+            background: $background-component-gradient-color;
+            color: $text-color;
+            @include border;
+            @include drop-shadow($color: $border-color);
+        }
+
+        .home-left {
+            flex: 2;
+        }
+
+        .home-right {
+            flex: 3;
+        }
+
+        .home-content {
+            flex: 5;
+            height: calc(100% - $navbar-height);
+        }
+
+    }
+}

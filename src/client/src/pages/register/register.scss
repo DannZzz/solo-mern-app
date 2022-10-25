@@ -1,0 +1,76 @@
+@import "../vars.scss";
+
+.register {
+    margin: 150px auto;
+    @include border(1px);
+    @include drop-shadow($border-color);
+    width: 500px;
+    color: $text-color;
+    position: relative;
+    padding: 50px 0;
+    background: $background-component-gradient-color;
+
+
+    h1 {
+        text-align: center;
+
+        span {
+            @include app-title-style;
+        }
+
+        margin: 30px 0;
+    }
+
+    .register-form {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+        justify-content: flex-start;
+
+        #register-username {
+            text-transform: lowercase;
+        }
+
+        .register-input {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+
+            input {
+                font-size: 20px;
+                padding: 10px 20px;
+                @include basic-input-style;
+            }
+        }
+
+        .register-validity-block {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            gap: 5px;
+            font-size: 12px;
+            padding: 1px;
+            color: rgb(241, 21, 21);
+
+            .register-block {
+                color: $text-color
+            }
+
+            .register-valid {
+                color: rgb(28, 156, 45)
+            }
+        }
+
+        .register-submit-button {
+            @include button-style;
+            padding: 10px 20px;
+            background-color: $button-background-color;
+        }
+
+    }
+
+
+}

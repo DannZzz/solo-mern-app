@@ -1,6 +1,8 @@
-node_modules
+/node_modules
 uploads
 tokens.json
+
+src/client/node_modules
 
 # dependencies
 /.pnp

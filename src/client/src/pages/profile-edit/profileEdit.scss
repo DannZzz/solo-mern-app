@@ -1,0 +1,144 @@
+@import "../vars.scss";
+
+
+#avatar-input {
+    display: none;
+}
+
+.profile-edit {
+    padding: 20px 0 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    @include border;
+    @include drop-shadow($color: $border-color);
+    width: 350px;
+    left: 50px;
+    background: $background-component-gradient-color;
+    border-radius: 5px;
+    color: $text-color;
+    gap: 30px;
+    margin: 25px auto;
+
+    .profile-edit-edit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+        flex-basis: content;
+
+        input,
+        textarea {
+            @include basic-input-style;
+            padding: 5px 10px;
+            resize: none;
+        }
+    }
+
+    .profile-edit-image-edit {
+        .profile-edit-avatar-image {
+            position: relative;
+            cursor: pointer;
+
+            .profile-edit-avatar {
+                @include avatar-image(150px);
+                padding: 7px;
+                @include border(1px, transparent);
+
+                &:hover {
+                    // padding: 0;
+                    transform: scale(1.1);
+                    @include border(1px, white);
+
+                }
+            }
+        }
+    }
+
+    // .username-edit {}
+
+    // .name-edit {}
+
+    .profile-edit-bio-edit {
+        font-size: 14px;
+        line-height: 21px;
+
+        textarea {
+            @include custom-scrollbar;
+
+        }
+    }
+
+    .profile-edit-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 0;
+
+        button {
+            @include button-style($height: 20px, $scale: 1, $color: rgb(41, 170, 63));
+        }
+    }
+
+    .profile-edit-characteristics {
+        background-color: $navbar-background-color;
+        text-align: left;
+        padding: 15px;
+        margin-top: 30px;
+
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            .skill-add:not(.item) {
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                gap: 3px;
+
+                input {
+                    @include basic-input-style;
+                    max-width: 100px;
+                    padding: 2.5px 5px;
+                }
+
+                .add-button {
+                    // width: 35px;
+                    font-size: 1rem;
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+
+            li {
+                align-items: center;
+                @include border(1px, $text-color);
+                border-radius: 2px;
+                display: inline-block;
+                // flex-basis: content;
+                font-size: 12px;
+                margin: 0 7px 7px 0;
+                padding: 7px;
+
+                .remove {
+                    margin-left: 5px;
+                    font-size: 1rem;
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+
+}

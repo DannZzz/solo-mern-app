@@ -1,0 +1,82 @@
+@import "./pages/vars.scss";
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body,
+html {
+  background: $background-gradient-color;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Fuzzy Bubbles', cursive;
+}
+
+.app-content {
+  position: relative;
+  height: calc(100vh - $navbar-height);
+  // height: 100%;
+  padding-top: $navbar-height;
+  @include custom-scrollbar;
+
+
+  .main-alerts {
+    @include hideScrollbar;
+    position: fixed;
+    width: 35%;
+    height: 35%;
+    top: calc(20px + $navbar-height);
+    right: 20px;
+    z-index: 9999;
+    overflow-y: scroll;
+
+    .alert-danger {
+      background-color: #f44336;
+    }
+
+    .alert-success {
+      background-color: #04AA6D;
+    }
+
+    .alert-info {
+      background-color: #2196F3;
+    }
+
+    .alert-warning {
+      background-color: #ff9800;
+    }
+
+    .main-alert {
+      padding: 20px;
+      color: white;
+      opacity: 1;
+      transition: opacity 0.6s;
+      margin-bottom: 15px;
+
+      .alert-closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.prevent-default-a {
+  @include prevent-link;
+}

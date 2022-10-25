@@ -1,0 +1,181 @@
+@mixin on-mobile {
+    @media screen and (max-width: 480px) {
+        @content
+    }
+}
+
+;
+
+@mixin on-tablet {
+    @media screen and (max-width: 768px) {
+        @content
+    }
+}
+
+;
+
+@mixin on-laptop {
+    @media screen and (max-width: 1200px) {
+        @content
+    }
+}
+
+;
+
+@mixin button-style($height: 20px, $scale: 1.1, $font-size: auto, $color: $basic-button-color, $down: 0.75em) {
+    cursor: pointer;
+    border: none;
+    padding: calc($height/2) $height;
+    transition: all 0.3s;
+    @include background-gradient($color);
+    font-size: $font-size;
+    color: $text-color;
+    text-transform: uppercase;
+    filter: drop-shadow(0 0 2px darken($color, 10%));
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 9999px;
+
+    @include disable-select;
+
+    &:hover {
+        filter: drop-shadow(0 2px 1px darken($color, 10%));
+        letter-spacing: 2px;
+        transform: scale($scale);
+    }
+
+    &:active {
+        background: linear-gradient(to bottom,
+                lighten(saturate(lighten($color, 15%), 35%), 7%) 0%,
+                lighten(saturate(lighten($color, 12%), 15%), 7%) 26%,
+                lighten($color, 7%) 100%);
+
+        transform: translate(0em, $down);
+    }
+
+    @content;
+}
+
+@mixin prevent-link($color: $special-text-color) {
+    text-decoration: none;
+    color: $color;
+    font-weight: bold;
+}
+
+@mixin basic-input-style {
+    outline: none;
+    border: none;
+    border-bottom-style: groove;
+    background: $background-component-gradient-color;
+    border-bottom-color: $border-color;
+
+    color: $text-color;
+
+    &::placeholder {
+        color: silver
+    }
+
+    @content;
+}
+
+@mixin app-title-style {
+    letter-spacing: 3px;
+    color: $special-text-color;
+}
+
+@mixin drop-shadow($pixels: 5px, $color: black) {
+    filter: drop-shadow(0 0 $pixels $color);
+}
+
+@mixin hideScrollbar {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@mixin avatar-image($length: 40px) {
+    width: $length;
+    height: $length;
+    object-fit: cover;
+    border-radius: 9999px;
+}
+
+@mixin border-inside ($size, $color: $border-color) {
+    box-shadow: 0px 0px 0px $size $color inset;
+}
+
+@mixin border($size: 2px, $color: $border-color) {
+    border: $size solid $color;
+}
+
+@mixin custom-scrollbar ($color: $background-color, $background-color: $background-color) {
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    /* width */
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: $color;
+        width: 10px;
+        border-radius: 10px;
+
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(to bottom,
+                lighten(saturate(lighten($color, 15%), 35%), 7%) 0%,
+                lighten(saturate(lighten($color, 12%), 15%), 7%) 26%,
+                lighten($color, 7%) 100%);
+    }
+}
+
+@mixin background-gradient($color) {
+    background: linear-gradient(lighten($color, 7%), darken($color, 7%));
+}
+
+@mixin input-radio-style {
+    cursor: pointer;
+    appearance: none;
+    height: 1.2rem;
+    width: 1.2rem;
+    -webkit-appearance: none;
+    border: 0.2rem solid $special-text-color;
+    background-color: var(--bg-color);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px $special-text-color;
+    transition: border 0.1s linear;
+
+    &:hover {
+        border-width: 0;
+    }
+
+    &:checked {
+        box-shadow: 0 0 0 1px $text-color;
+        background-color: $special-text-color;
+        border-width: 0.2rem;
+        border: 0.2rem solid $text-color;
+
+    }
+}
+
+@mixin disable-select {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

@@ -1,0 +1,15 @@
+.overlay-content {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+
+    .overlay-content-container {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}

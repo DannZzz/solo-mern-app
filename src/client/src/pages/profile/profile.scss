@@ -1,0 +1,141 @@
+@import "../vars.scss";
+
+.profile {
+    display: grid;
+    grid-template-areas:
+        "avatar username buttons"
+        "avatar following following"
+        "avatar bio chars"
+        "avatar bio chars";
+    gap: 10px 30px;
+    margin: 30px auto;
+    background: $background-component-gradient-color;
+    @include border;
+    border-radius: 5px;
+    @include drop-shadow($color: $border-color);
+    color: $text-color;
+    padding: 30px;
+    position: relative;
+    width: fit-content;
+    max-width: 100%;
+    text-align: center;
+
+    @include on-tablet {
+        margin: 30px 0;
+        width: auto;
+    }
+
+    .profile-avatar {
+        grid-area: avatar;
+        @include avatar-image(250px);
+        padding: 7px;
+        @include border();
+    }
+
+    .profile-username {
+        grid-area: username;
+        color: $special-text-color;
+    }
+
+    .profile-following {
+        grid-area: following;
+        display: flex;
+        justify-content: flex-start;
+        gap: 20px;
+
+        .profile-follow-item {
+            span {
+                font-size: x-large;
+            }
+        }
+    }
+
+    .profile-bio {
+        grid-area: bio;
+        margin: 10px 0;
+    }
+
+    .profile-buttons {
+        grid-area: buttons;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 0;
+
+        .profile-edit-button {
+            color: #231E39;
+            border-radius: 3px;
+            cursor: pointer;
+            @include prevent-link($text-color);
+            @include button-style(20px, 1, 10px, $color: $profile-button-color);
+
+            // &:hover {
+            //     transform: scale(1.25);
+            // }
+        }
+
+        button {
+            color: $text-color;
+        }
+
+        .profile-follow {
+            @include button-style(20px, 1, 10px, $color: $follow-button-color);
+        }
+
+        .profile-unfollow {
+            @include button-style(20px, 1, 10px, $color: $unfollow-button-color);
+        }
+
+        .profile-message {
+            @include button-style(20px, 1, 10px, $color: $send-message-button-color);
+        }
+    }
+
+
+    .profile-characteristics {
+        grid-area: chars;
+        background-color: $navbar-background-color;
+        text-align: left;
+        padding: 15px;
+        // margin-top: 30px;
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                @include border(1px, $text-color);
+                border-radius: 2px;
+                display: inline-block;
+                font-size: 12px;
+                margin: 0 7px 7px 0;
+                padding: 7px;
+            }
+        }
+    }
+
+}
+
+.profile-posts-container {
+
+    color: $text-color;
+    padding: 30px;
+    position: relative;
+    width: fit-content;
+    max-width: 100%;
+    margin: 30px auto;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    @include on-tablet {
+        margin: 30px 0;
+        width: auto;
+    }
+}

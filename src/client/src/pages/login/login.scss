@@ -1,0 +1,46 @@
+@import "../vars.scss";
+
+.login {
+    margin: 150px auto;
+    @include border(1px);
+    @include drop-shadow;
+    width: 500px;
+    position: relative;
+    padding: 50px 0;
+    background: $background-component-gradient-color;
+    color: $text-color;
+
+
+    .login-title {
+        text-align: center;
+
+        .login-special-text {
+            @include app-title-style;
+        }
+
+        margin: 30px 0;
+    }
+
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+        justify-content: flex-start;
+
+        .login-input {
+            font-size: 20px;
+            padding: 10px 20px;
+            @include basic-input-style;
+        }
+
+        .login-submit-button {
+            @include button-style;
+            padding: 10px 20px;
+        }
+
+    }
+
+
+}

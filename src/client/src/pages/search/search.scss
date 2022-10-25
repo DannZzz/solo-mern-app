@@ -1,0 +1,60 @@
+@import "../vars.scss";
+
+.search {
+    width: 30%;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+    @include border-inside(1px);
+    @include drop-shadow($color: $border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 5px;
+    gap: 20px;
+    color: $text-color;
+    background: $background-component-gradient-color;
+    overflow-y: scroll;
+    @include hideScrollbar;
+
+    .search-empty {
+        padding: 100px 0;
+        width: 100%;
+        font-size: xx-large;
+        text-align: center;
+    }
+
+    .search-group {
+        // flex-basis: 100%;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-height: 450px;
+        height: fit-content;
+        padding: 10px;
+        border-bottom: 1.5px;
+        border-bottom-style: double;
+        border-bottom-color: $border-color;
+
+        .search-group-name {
+            letter-spacing: 3px;
+        }
+
+        .search-list {
+            @include custom-scrollbar;
+
+            // overflow-x: scroll;
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            gap: 5px;
+
+            * {
+                max-width: 100%;
+            }
+        }
+    }
+}

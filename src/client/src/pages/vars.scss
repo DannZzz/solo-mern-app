@@ -1,0 +1,38 @@
+@import "./mixins.scss";
+@import "./colors.scss";
+
+$text-color: white;
+
+$special-text-color: $Deep-Orange;
+
+$background-color: $Dark-Grey;
+
+$background-gradient-color: linear-gradient(lighten($background-color, 7%), darken($background-color, 7%));
+
+$background-component-gradient-color: linear-gradient(darken($background-color, 3%), darken($background-color, 7%));
+
+$button-background-color: white;
+
+$home-width: 70%;
+
+$navbar-height: 60px;
+
+$border-color: $Orange-Yellow;
+
+$navbar-background-color: $background-gradient-color;
+
+$top-footer-bar-height: 70px;
+
+$top-footer-bar-background-color: $background-gradient-color;
+
+$left-bar-background-color: $background-gradient-color;
+
+$basic-button-color: $Deep-Orange;
+
+$follow-button-color: #e7351d;
+
+$unfollow-button-color: #968a88;
+
+$send-message-button-color: #ab63fd;
+
+$profile-button-color: #e99e14;

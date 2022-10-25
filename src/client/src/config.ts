@@ -1,0 +1,1 @@
+export const Web: string = "http://localhost:5000/";
