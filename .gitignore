@@ -1,3 +1,25 @@
 node_modules
 upload
 src/tokens.json
+
+# dependencies
+src/client/node_modules
+src/client/.pnp
+src/client.pnp.js
+
+# testing
+src/client/coverage
+
+# production
+src/client/build
+
+# misc
+src/client.DS_Store
+src/client.env.local
+src/client.env.development.local
+src/client.env.test.local
+src/client.env.production.local
+
+src/clientnpm-debug.log*
+src/clientyarn-debug.log*
+src/clientyarn-error.log*
