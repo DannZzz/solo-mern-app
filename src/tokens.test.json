@@ -1,5 +1,0 @@
-{
-    "MONGO_URI": "mongodb://localhost:5000/myapp",
-    "--NOTE--": "If you are changing the port, also You have to change in config file from src/client folder",
-    "PORT": 5000
-}
