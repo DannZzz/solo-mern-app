@@ -22,10 +22,10 @@ npm run deps:install
 Start project with command
 
 ```shall
-yarn start
+yarn dev
 ```
 Or
 
 ```shall
-npm run start
+npm dev start
 ```
