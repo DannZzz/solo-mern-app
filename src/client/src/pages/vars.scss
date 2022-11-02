@@ -1,23 +1,33 @@
 @import "./mixins.scss";
 @import "./colors.scss";
 
-$text-color: white;
+$text-color: black;
 
-$special-text-color: $Deep-Orange;
+$special-text-color: #1890ff;
 
-$background-color: $Dark-Grey;
+$background-color: rgb(202, 202, 202);
 
-$background-gradient-color: linear-gradient(lighten($background-color, 7%), darken($background-color, 7%));
+$component-background: #1890ff;
 
-$background-component-gradient-color: linear-gradient(darken($background-color, 3%), darken($background-color, 7%));
+$background-gradient-color: linear-gradient(
+  lighten($background-color, 7%),
+  darken($background-color, 7%)
+);
+
+$background-component-gradient-color: linear-gradient(
+  darken($background-color, 3%),
+  darken($background-color, 7%)
+);
 
 $button-background-color: white;
+
+$button-color: white;
 
 $home-width: 70%;
 
 $navbar-height: 60px;
 
-$border-color: $Orange-Yellow;
+$border-color: darken($component-background, 10%);
 
 $navbar-background-color: $background-gradient-color;
 
@@ -27,7 +37,7 @@ $top-footer-bar-background-color: $background-gradient-color;
 
 $left-bar-background-color: $background-gradient-color;
 
-$basic-button-color: $Deep-Orange;
+$basic-button-color: $component-background;
 
 $follow-button-color: #e7351d;
 

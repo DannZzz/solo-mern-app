@@ -11,6 +11,7 @@
     "@types/node": "^16.11.64",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
+    "antd": "^4.23.6",
     "anytool": "^1.0.2",
     "classnames": "^2.3.2",
     "moment": "^2.29.4",
@@ -22,6 +23,7 @@
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
     "sass": "^1.55.0",
+    "socket.io-client": "^4.5.3",
     "typescript": "^4.8.4",
     "web-vitals": "^2.1.4"
   },
@@ -49,7 +51,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "typescript-plugin-css-modules": "^3.4.0"
-  }
+  "devDependencies": {}
 }

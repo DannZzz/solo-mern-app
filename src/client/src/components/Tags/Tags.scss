@@ -1,0 +1,16 @@
+@import "../../pages/vars.scss";
+
+.profile-edit-site-tag-plus {
+  background: #fff;
+  border-style: dashed;
+  cursor: pointer;
+}
+.profile-edit-edit-tag {
+  user-select: none;
+}
+.profile-edit-tag-input {
+  width: 78px;
+  margin-right: 8px;
+  vertical-align: top;
+  background: $background-component-gradient-color;
+}

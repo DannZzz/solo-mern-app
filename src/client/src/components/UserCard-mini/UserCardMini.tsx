@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { BsArrowRight } from 'react-icons/bs'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchUser, getCurrentUserLocalStorage, selectCurrentUser, UserDetails } from '../../features/current-user/current-user-slice'
+import { fetchUser, getCurrentUserLocalStorage, selectCurrentUser } from '../../features/current-user/current-user-slice'
 import { useFetch } from '../../modules/useFetch'
 import "./usercardmini.scss"
 

@@ -1,0 +1,32 @@
+@import "../../pages/vars.scss";
+
+.mini-users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  max-height: 400px;
+  @include hideScrollbar;
+  .mini-user {
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    border-radius: 20px;
+
+    &:hover {
+      background: darken($background-color, 5%);
+    }
+
+    span {
+      cursor: pointer;
+      color: $special-text-color;
+    }
+
+    img {
+      cursor: pointer;
+      @include avatar-image(50px);
+    }
+  }
+}

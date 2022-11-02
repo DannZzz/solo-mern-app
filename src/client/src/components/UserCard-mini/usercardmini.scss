@@ -1,59 +1,69 @@
 @import "../../pages/vars.scss";
 
 @mixin mg($left: 0) {
-    margin: 10px 10px 10px $left;
+  margin: 10px 10px 10px $left;
 }
 
 .usercard-mini {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+
+  .usercard-mini-avatar {
+    @include mg(10px);
+    @include avatar-image(75px);
+  }
+
+  .usercard-mini-texts {
+    @include mg;
+    display: flex;
+    flex-direction: column;
+    align-items: flex;
+    justify-content: center;
+    gap: 1px;
+
+    .usercard-mini-username {
+      color: $special-text-color;
+    }
+
+    .usercard-mini-name {
+    }
+  }
+
+  .usercard-mini-buttons {
+    @include mg(auto);
+
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 5px;
+    justify-content: center;
+    gap: 10px;
 
+    .usercard-mini-button {
+      &.usercard-mini-profile {
+        @include button-style(
+          $height: 20px,
+          $font-size: 10px,
+          $color: $profile-button-color
+        );
+      }
 
-    .usercard-mini-avatar {
-        @include mg(10px);
-        @include avatar-image(75px);
+      &.usercard-mini-follow {
+        @include button-style(
+          $height: 20px,
+          $font-size: 10px,
+          $color: $follow-button-color
+        );
+      }
+
+      &.usercard-mini-unfollow {
+        @include button-style(
+          $height: 20px,
+          $font-size: 10px,
+          $color: $unfollow-button-color
+        );
+      }
     }
-
-    .usercard-mini-texts {
-        @include mg;
-        display: flex;
-        flex-direction: column;
-        align-items: flex;
-        justify-content: center;
-        gap: 1px;
-
-        .usercard-mini-username {
-            color: $special-text-color;
-        }
-
-        .usercard-mini-name {}
-    }
-
-    .usercard-mini-buttons {
-        @include mg(auto);
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-
-        .usercard-mini-button {
-
-            &.usercard-mini-profile {
-                @include button-style($height: 20px, $font-size: 10px, $color: $profile-button-color);
-            }
-
-            &.usercard-mini-follow {
-                @include button-style($height: 20px, $font-size: 10px, $color: $follow-button-color);
-            }
-
-            &.usercard-mini-unfollow {
-                @include button-style($height: 20px, $font-size: 10px, $color: $unfollow-button-color);
-            }
-        }
-    }
-
+  }
 }

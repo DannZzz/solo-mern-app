@@ -1,0 +1,14 @@
+@import "../../vars.scss";
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-height: 100%;
+  max-width: 100%;
+
+  .home-content-header {
+    height: 150px;
+    @include home-container;
+  }
+}

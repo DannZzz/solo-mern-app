@@ -1,113 +1,89 @@
 @import "../../pages/vars.scss";
 
 .navbar {
-    position: fixed;
-    width: 100%;
-    background: $navbar-background-color;
+  position: fixed;
+  width: 100%;
+  background: $navbar-background-color;
 
-    border-bottom: 1px solid $border-color;
-    height: $navbar-height;
-    z-index: 3;
+  border-bottom: 1px solid $border-color;
+  height: $navbar-height;
+  z-index: 3;
 
-    .navbar-items {
-        // position: relative;
-        height: 100%;
-        width: $home-width;
-        margin: 0 auto;
+  .navbar-items {
+    // position: relative;
+    height: 100%;
+    width: $home-width;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    @include on-tablet {
+      gap: 20px;
+    }
+
+    @include on-mobile {
+      gap: 10px;
+    }
+
+    .navbar-item {
+      padding: 10px;
+      display: flex;
+      position: relative;
+
+      &:first-child {
+        flex: 1;
+      }
+
+      .navbar-item-dropdown {
+        position: relative;
+
+        .summary {
+          @include button-style($color: transparent);
+          @include prevent-link;
+          .navbar-avatar {
+            @include avatar-image;
+          }
+        }
+      }
+
+      .navbar-input-field {
+        position: relative;
+
+        input {
+          @include basic-input-style;
+          max-width: max-content;
+          width: 60%;
+          padding: 4px 8px 4px 32px;
+          transition: width 0.5s linear;
+
+          &:focus {
+            width: 100%;
+          }
+        }
+
+        .search-icon {
+          color: $special-text-color;
+          position: absolute;
+          cursor: pointer;
+          left: 8px;
+          top: 8px;
+        }
+      }
+
+      .navbar-link {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 30px;
+        gap: 5px;
+        @include button-style($color: transparent);
+        @include prevent-link;
 
-        @include on-tablet {
-            gap: 20px;
+        img {
+          @include avatar-image;
         }
-
-        @include on-mobile {
-            gap: 10px;
-        }
-
-        .navbar-item {
-            padding: 10px;
-            display: flex;
-            position: relative;
-
-            &:first-child {
-                flex: 1;
-            }
-
-            .navbar-item-dropdown {
-
-                position: relative;
-
-                .summary {
-                    @include button-style($color: transparent);
-                    @include prevent-link;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 5px;
-
-                    img {
-                        @include avatar-image;
-                    }
-                }
-
-                &:hover .dropdown-items {
-                    display: block;
-                }
-
-                .dropdown-items {
-                    position: absolute;
-                    display: none;
-                    background: $background-component-gradient-color;
-                    padding: 10px 20px;
-                    z-index: 5;
-                }
-            }
-
-            .navbar-input-field {
-                position: relative;
-
-                input {
-                    @include basic-input-style;
-                    max-width: max-content;
-                    width: 60%;
-                    padding: 4px 8px 4px 32px;
-                    transition: width 0.5s linear;
-
-                    &:focus {
-                        width: 100%;
-                    }
-                }
-
-
-                .search-icon {
-                    color: $special-text-color;
-                    position: absolute;
-                    cursor: pointer;
-                    left: 8px;
-                    top: 4px;
-                }
-
-            }
-
-            .navbar-link {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 5px;
-                @include button-style($color: transparent);
-                @include prevent-link;
-
-                img {
-                    @include avatar-image;
-                }
-
-            }
-
-
-        }
+      }
     }
-
+  }
 }

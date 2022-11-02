@@ -1,21 +1,23 @@
 import { memoize } from "anytool";
 
+export const UsernamePattern = /[a-z0-9]/;
+
 function usernameValidity(username: string) {
-    username = username?.toLowerCase() || "";
+  username = username?.toLowerCase() || "";
 
-    const errors: Array<"min-length" | "max-length" | "chars"> = [];
+  const errors: Array<"min-length" | "max-length" | "chars"> = [];
 
-    if (username.length < 3) {
-        errors.push("min-length")
-    }
-    if (username.length > 16) {
-        errors.push("max-length")
-    }
-    if (/[^a-z0-9]/.test(username)) {
-        errors.push("chars");
-    }
+  if (username.length < 3) {
+    errors.push("min-length");
+  }
+  if (username.length > 16) {
+    errors.push("max-length");
+  }
+  if (!UsernamePattern.test(username)) {
+    errors.push("chars");
+  }
 
-    return errors;
+  return errors;
 }
 
-export default memoize(usernameValidity)
+export default memoize(usernameValidity);

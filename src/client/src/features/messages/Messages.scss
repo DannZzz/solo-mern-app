@@ -1,0 +1,81 @@
+@import "../../pages/vars.scss";
+
+.messages-drawer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .messages-drawer-users {
+    height: 110px;
+    @include custom-scrollbar($x: scroll);
+
+    .messages-drawer-user {
+      padding: 10px 5px;
+
+      img {
+        @include avatar-image($length: 70px);
+      }
+    }
+  }
+
+  .messages-drawer-chat {
+    height: calc(100% - 110px);
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .messages-drawer-chat-container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      h3 {
+        text-align: left;
+      }
+
+      .messages-drawer-chat-list {
+        height: 100%;
+        @include border;
+        overflow: scroll;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 5px;
+
+        .messages-drawer-message {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+
+          .messages-drawer-message-text {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            word-break: break-all;
+            max-width: 60%;
+            width: fit-content;
+            background: $background-component-gradient-color;
+            padding: 5px 10px;
+            border-radius: 0 10px 10px 10px;
+
+            .message-drawer-message-text-date {
+              font-size: 7px;
+            }
+          }
+          &.messages-drawer-current-user {
+            flex-direction: row-reverse;
+
+            .messages-drawer-message-text {
+              border-radius: 10px 0 10px 10px;
+              align-items: flex-end;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,46 +1,40 @@
 @import "../vars.scss";
 
 .login {
-    margin: 150px auto;
-    @include border(1px);
-    @include drop-shadow;
-    width: 500px;
-    position: relative;
-    padding: 50px 0;
-    background: $background-component-gradient-color;
-    color: $text-color;
+  margin: 150px auto;
+  @include border(1px);
+  @include drop-shadow;
+  width: 500px;
+  position: relative;
+  padding: 50px 0;
+  background: $background-component-gradient-color;
+  color: $text-color;
 
+  .login-title {
+    text-align: center;
 
-    .login-title {
-        text-align: center;
-
-        .login-special-text {
-            @include app-title-style;
-        }
-
-        margin: 30px 0;
+    .login-special-name {
+      color: $special-text-color;
     }
 
-    .login-form {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        gap: 20px;
-        align-items: center;
-        justify-content: flex-start;
+    margin: 30px 0;
+  }
 
-        .login-input {
-            font-size: 20px;
-            padding: 10px 20px;
-            @include basic-input-style;
-        }
+  .login-form {
+    // margin: 0 auto;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
 
-        .login-submit-button {
-            @include button-style;
-            padding: 10px 20px;
-        }
+    // .login-form-item {
+    //   label {
+    //     left: 0;
+    //   }
+    // }
 
+    .login-submit-button {
+      @include button-style;
+      padding: 10px 20px;
     }
-
-
+  }
 }

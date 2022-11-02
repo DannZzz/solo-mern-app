@@ -1,191 +1,212 @@
 @import "../../pages/vars.scss";
 
 .post-ui-data {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  width: 100%;
+  padding: 70px 5px 20px 5px;
+  background: $background-component-gradient-color;
+  @include border;
+  border-radius: 0 20px 20px 20px;
+  @include drop-shadow($color: $border-color);
+
+  .post-ui-creator {
+    cursor: pointer;
+    position: absolute;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 10px;
+    gap: 5px;
+    top: 5px;
+    left: 5px;
+
+    .post-ui-creator-avatar {
+      @include avatar-image(50px);
+      padding: 4px;
+      @include border;
+    }
+
+    .post-ui-creator-username {
+      font-size: 1em;
+      color: $special-text-color;
+    }
+  }
+
+  .post-ui-settings {
+    cursor: pointer;
+    color: $special-text-color;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+
+    &:active {
+      transform: translate(0em, 0.5em);
+    }
+  }
+
+  .post-ui-date {
+    position: absolute;
+    right: 15px;
+    bottom: 5px;
+    color: darken($color: $text-color, $amount: 30%);
+    font-size: 0.8em;
+  }
+
+  .post-ui-text {
+    text-align: start;
+    margin: 0 auto;
+  }
+
+  .post-ui-image-container {
     position: relative;
     width: 100%;
-    padding: 70px 5px 20px 5px;
-    background: $background-component-gradient-color;
-    @include border;
-    border-radius: 0 20px 20px 20px;
-    @include drop-shadow($color: $border-color);
-
-    .post-ui-creator {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
-        top: 5px;
-        left: 5px;
-
-        .post-ui-creator-avatar {
-            @include avatar-image(50px);
-            padding: 4px;
-            @include border;
-        }
-
-        .post-ui-creator-username {
-            font-size: 1em;
-            color: $special-text-color;
-        }
-    }
-
-    .post-ui-date {
-        position: absolute;
-        right: 5px;
-        top: 5px;
-        color: darken($color: $text-color, $amount: 30%);
-        font-size: 0.8em;
-    }
-
-    .post-ui-text {
-        text-align: start;
-        margin: 0 auto;
-    }
 
     .post-ui-image-slider {
-        margin: 0 auto;
-        width: 80%;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      width: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      height: auto;
+      max-height: 400px;
+      max-width: 400px;
+      width: auto;
 
-        .post-ui-slide-controller {
-            position: absolute;
-
-            @include button-style($color: transparent, $font-size: 2em) {}
-
-            &.post-ui-slide-controller-left {
-                left: 0;
-            }
-
-            &.post-ui-slide-controller-right {
-                right: 0;
-            }
+      .post-ui-image-slider-dots {
+        button {
+          height: 10px;
         }
+      }
 
-        .post-ui-slide-image {
-            height: auto;
-            max-height: 500px;
-            max-width: 100%;
-            width: auto;
-            @include border;
-            object-fit: cover;
-
+      .post-ui-slide-image-div {
+        * {
+          display: flex !important;
+          justify-content: center;
+          align-items: center;
         }
-    }
+      }
 
-    .post-ui-methods {
-        @include disable-select;
-        cursor: pointer;
+      .post-ui-slide-image {
+        width: 65%;
+        @include border;
+        object-fit: cover;
+        margin: auto;
+      }
+    }
+  }
+
+  .post-ui-methods {
+    @include disable-select;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-left: 20px;
+
+    .post-ui-method-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      font-size: 1.5em;
+
+      .post-ui-method-count {
+        font-size: 0.8em;
+      }
+
+      .post-ui-method-comment {
+        color: $special-text-color;
+      }
+    }
+  }
+
+  .post-ui-lock {
+    margin: 0 auto;
+  }
+
+  .post-ui-comments {
+    display: flex;
+    width: 100%;
+    max-height: 300px;
+
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    @include border(0.1px, $text-color);
+    padding: 5px;
+    gap: 15px;
+
+    .post-ui-comments-container {
+      overflow: scroll;
+      @include custom-scrollbar;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      // justify-content: center;
+      gap: 5px;
+
+      .post-ui-comment-data {
         display: flex;
-        justify-content: center;
-        gap: 30px;
-        margin-left: 20px;
-
-        .post-ui-method-block {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            font-size: 1.5em;
-
-            .post-ui-method-count {
-                font-size: 0.8em;
-            }
-        }
-    }
-
-    .post-ui-lock {
-        margin: 0 auto;
-    }
-
-    .post-ui-comments {
-        display: flex;
-        max-width: 90%;
-        width: 100%;
-        max-height: 300px;
-
-        margin: 0 auto;
-        flex-direction: column;
         align-items: flex-start;
+        gap: 5px;
         justify-content: flex-start;
-        @include border(0.1px, $text-color);
-        padding: 5px;
-        gap: 15px;
+        width: 100%;
 
-        .post-ui-comments-container {
-            overflow: scroll;
-            @include custom-scrollbar;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            // justify-content: center;
-            gap: 5px;
-
-            .post-ui-comment-data {
-                display: flex;
-                align-items: flex-start;
-                gap: 5px;
-                justify-content: flex-start;
-                width: 100%;
-
-                .post-ui-comment-avatar {
-                    cursor: pointer;
-                    @include avatar-image;
-                }
-
-                .post-ui-comment-texts {
-
-                    .post-ui-comment-username {
-                        cursor: pointer;
-                        color: $special-text-color;
-                    }
-
-                    .post-ui-comment-message {
-                        word-break: break-all;
-                    }
-                }
-            }
+        .post-ui-comment-avatar {
+          cursor: pointer;
+          @include avatar-image;
         }
 
-        .post-ui-comment-input-block {
-            position: relative;
-            display: flex;
-            align-items: center;
-            width: 35%;
-            transition: width 0.5s linear;
+        .post-ui-comment-texts {
+          .post-ui-comment-username {
+            cursor: pointer;
+            color: $special-text-color;
+          }
 
-            &:focus-within {
-                width: 75%;
-            }
-
-            .post-ui-comments-input {
-                @include hideScrollbar;
-                resize: none;
-                width: 100%;
-                @include basic-input-style;
-                padding: 8px 22px 8px 10px;
-
-
-            }
-
-            .post-ui-comment-input-send-icon {
-                @include button-style($color: transparent, $down: 0.25em);
-                padding: 0;
-                cursor: pointer;
-                color: $special-text-color;
-                width: 20px;
-                position: absolute;
-                right: 2px;
-            }
+          .post-ui-comment-message {
+            word-break: break-all;
+          }
         }
+      }
     }
+
+    .post-ui-comment-input-block {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 35%;
+      transition: width 0.5s linear;
+
+      &:focus-within {
+        width: 75%;
+      }
+
+      .post-ui-comments-input {
+        width: 100%;
+        padding-right: 32px;
+      }
+
+      .post-ui-comment-input-send-icon {
+        @include button-style($color: transparent, $down: 0.25em);
+        padding: 0;
+        cursor: pointer;
+        color: $special-text-color;
+        position: absolute;
+        right: 0;
+        // margin: 4px;
+      }
+    }
+  }
 }
